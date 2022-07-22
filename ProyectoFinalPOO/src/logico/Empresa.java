@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public class Empresa {
 	private String idEmpresa;
 	private String nombre;
-	private String director;
+	private String director; 
 	private String telefono;
 	private ArrayList<SolicitudEmpresa> misSolicitudes;
 	

@@ -38,7 +38,7 @@ public class SolicitudEmpresa {
 		this.pedirLocalizacion = false;
 	}
 
-	public String getTipo() {
+	public String getTipo() { 
 		return tipo;
 	}
 

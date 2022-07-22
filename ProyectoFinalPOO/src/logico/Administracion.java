@@ -8,7 +8,7 @@ public class Administracion {
 	private ArrayList<SolicitudEmpresa> misSolicitudCompanias;
 	private ArrayList<SolicitudPersona> misSolicitudPersonas;
 	public static Administracion administracion = null;
-	
+	 
 	private Administracion() {
 		super();
 		this.misPersonas = new ArrayList<Persona>();
