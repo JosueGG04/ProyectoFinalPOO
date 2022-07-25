@@ -6,12 +6,12 @@ import com.sun.jndi.url.iiopname.iiopnameURLContextFactory;
 
 public class SolicitudEmpresa {
 	private String idSolicitud;
-	private String tipo;
+	private String tipo;//innecesario
 	private int cantEmpleadosSolicitados;
 	private ArrayList<Persona> personasContratadas;
 	private int edadMinima;
-	private String localizacionSugerida;
-	private boolean pedirLocalizacion;
+	private String localizacionSugerida; //¿Necesario?
+	private boolean pedirLocalizacion; //¿Necesario?
 	private float salarioMaximo;
 	private ArrayList<String> idiomas;
 	private String carrera;

@@ -7,6 +7,9 @@ public class Administracion {
 	private ArrayList<Empresa> misEmpresas;
 	private ArrayList<SolicitudEmpresa> misSolicitudCompanias;
 	private ArrayList<SolicitudPersona> misSolicitudPersonas;
+	public static int generadorCodeEmpresa = 1;
+	public static int generadorSolicitudPersona = 1;
+	public static int generadorSolicitudEmpresa = 1;
 	public static Administracion administracion = null;
 	 
 	private Administracion() {
