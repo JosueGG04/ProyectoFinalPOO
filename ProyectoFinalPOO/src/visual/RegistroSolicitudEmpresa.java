@@ -11,6 +11,9 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JSpinner;
 import javax.swing.border.TitledBorder;
+import javax.swing.JRadioButton;
+import javax.swing.UIManager;
+import java.awt.Color;
 
 public class RegistroSolicitudEmpresa extends JDialog {
 
@@ -35,7 +38,7 @@ public class RegistroSolicitudEmpresa extends JDialog {
 	 * Create the dialog.
 	 */
 	public RegistroSolicitudEmpresa() {
-		setBounds(100, 100, 567, 396);
+		setBounds(100, 100, 567, 457);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
@@ -66,34 +69,40 @@ public class RegistroSolicitudEmpresa extends JDialog {
 			}
 			
 			JPanel panel_1 = new JPanel();
-			panel_1.setBorder(new TitledBorder(null, "Cantidad a Contratar", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-			panel_1.setBounds(10, 36, 521, 115);
+			panel_1.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Informacion de solicitud", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+			panel_1.setBounds(10, 36, 521, 91);
 			panel.add(panel_1);
 			panel_1.setLayout(null);
 			
-			JLabel lblUniversitarios = new JLabel("Universitarios:");
-			lblUniversitarios.setBounds(10, 26, 112, 14);
-			panel_1.add(lblUniversitarios);
+			JRadioButton rdbtnNewRadioButton = new JRadioButton("Univesitario");
+			rdbtnNewRadioButton.setBounds(147, 24, 109, 23);
+			panel_1.add(rdbtnNewRadioButton);
 			
-			JSpinner spnCantUni = new JSpinner();
-			spnCantUni.setBounds(126, 23, 385, 20);
-			panel_1.add(spnCantUni);
+			JRadioButton rdbtnTrabajador = new JRadioButton("Obrero");
+			rdbtnTrabajador.setBounds(271, 24, 109, 23);
+			panel_1.add(rdbtnTrabajador);
 			
-			JLabel lblTcnicos = new JLabel("T\u00E9cnicos");
-			lblTcnicos.setBounds(10, 54, 112, 14);
-			panel_1.add(lblTcnicos);
+			JRadioButton rdbtnTecnico = new JRadioButton("Tecnico");
+			rdbtnTecnico.setBounds(395, 24, 109, 23);
+			panel_1.add(rdbtnTecnico);
 			
-			JSpinner spnCantTec = new JSpinner();
-			spnCantTec.setBounds(126, 51, 385, 20);
-			panel_1.add(spnCantTec);
+			JLabel lblTipoDeTrabajador = new JLabel("Tipo de trabajador:");
+			lblTipoDeTrabajador.setBounds(15, 25, 117, 20);
+			panel_1.add(lblTipoDeTrabajador);
 			
-			JLabel lblObreros = new JLabel("Obreros:");
-			lblObreros.setBounds(10, 82, 112, 14);
-			panel_1.add(lblObreros);
+			JSpinner spinner = new JSpinner();
+			spinner.setBounds(157, 56, 159, 20);
+			panel_1.add(spinner);
 			
-			JSpinner spnCantObreros = new JSpinner();
-			spnCantObreros.setBounds(126, 79, 385, 20);
-			panel_1.add(spnCantObreros);
+			JLabel lblCantidadDeTrabajadores = new JLabel("Cantidad de trabajadores:");
+			lblCantidadDeTrabajadores.setBounds(15, 56, 147, 20);
+			panel_1.add(lblCantidadDeTrabajadores);
+			
+			JPanel panel_2 = new JPanel();
+			panel_2.setLayout(null);
+			panel_2.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Especificaciones de solicitud", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+			panel_2.setBounds(10, 138, 521, 226);
+			panel.add(panel_2);
 		}
 		{
 			JPanel buttonPane = new JPanel();
