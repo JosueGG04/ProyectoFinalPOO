@@ -54,7 +54,7 @@ public class RegistroPersona extends JDialog {
 	private JCheckBox chckbxItaliano;
 	private JCheckBox chckbxRuso;
 	private JCheckBox chckbxMandarin;
-	private JRadioButton rbUnivesitario;
+	private JRadioButton rbUniversitario;
 	private JRadioButton rbTecnico;
 	private JRadioButton rbObrero;
 	private JPanel panel_universitario;
@@ -84,6 +84,7 @@ public class RegistroPersona extends JDialog {
 	 * Create the dialog.
 	 */
 	public RegistroPersona() {
+		setTitle("Registrar Personal");
 		setBounds(100, 100, 567, 650);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -202,11 +203,11 @@ public class RegistroPersona extends JDialog {
 			panel_tipo.setBounds(10, 379, 529, 77);
 			contentPanel.add(panel_tipo);
 			
-			rbUnivesitario = new JRadioButton("Univesitario");
-			rbUnivesitario.setSelected(true);
-			rbUnivesitario.addActionListener(new ActionListener() {
+			rbUniversitario = new JRadioButton("Univesitario");
+			rbUniversitario.setSelected(true);
+			rbUniversitario.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
-					if(rbUnivesitario.isSelected()) {
+					if(rbUniversitario.isSelected()) {
 						rbObrero.setSelected(false);
 						rbTecnico.setSelected(false);
 						panel_tecnico.setVisible(false);
@@ -215,15 +216,15 @@ public class RegistroPersona extends JDialog {
 					}
 				}
 			});
-			rbUnivesitario.setBounds(50, 29, 109, 23);
-			panel_tipo.add(rbUnivesitario);
+			rbUniversitario.setBounds(50, 29, 109, 23);
+			panel_tipo.add(rbUniversitario);
 			
 			rbTecnico = new JRadioButton("Tecnico");
 			rbTecnico.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					if(rbTecnico.isSelected()) {
 						rbObrero.setSelected(false);
-						rbUnivesitario.setSelected(false);
+						rbUniversitario.setSelected(false);
 						panel_tecnico.setVisible(true);
 						panel_universitario.setVisible(false);
 						panel_obrero.setVisible(false);;
@@ -238,7 +239,7 @@ public class RegistroPersona extends JDialog {
 				public void actionPerformed(ActionEvent e) {
 					if(rbObrero.isSelected()) {
 						rbTecnico.setSelected(false);
-						rbUnivesitario.setSelected(false);
+						rbUniversitario.setSelected(false);
 						panel_tecnico.setVisible(false);
 						panel_universitario.setVisible(false);
 						panel_obrero.setVisible(true);;
@@ -270,11 +271,11 @@ public class RegistroPersona extends JDialog {
 		panel_empleado.add(panel_idiomas);
 		panel_idiomas.setLayout(null);
 		
-		chckbxIngles = new JCheckBox("Ingles");
+		chckbxIngles = new JCheckBox("Ingl\u00E9s");
 		chckbxIngles.setBounds(9, 17, 93, 23);
 		panel_idiomas.add(chckbxIngles);
 		
-		chckbxFrances = new JCheckBox("Frances");
+		chckbxFrances = new JCheckBox("Franc\u00E9s");
 		chckbxFrances.setBounds(111, 17, 93, 23);
 		panel_idiomas.add(chckbxFrances);
 		
@@ -286,11 +287,11 @@ public class RegistroPersona extends JDialog {
 		chckbxRuso.setBounds(9, 85, 93, 23);
 		panel_idiomas.add(chckbxRuso);
 		
-		chckbxJapones = new JCheckBox("Japones");
+		chckbxJapones = new JCheckBox("Japon\u00E9s");
 		chckbxJapones.setBounds(111, 51, 93, 23);
 		panel_idiomas.add(chckbxJapones);
 		
-		chckbxMandarin = new JCheckBox("Mandarin");
+		chckbxMandarin = new JCheckBox("Mandar\u00EDn");
 		chckbxMandarin.setBounds(111, 85, 93, 23);
 		panel_idiomas.add(chckbxMandarin);
 		
@@ -417,7 +418,7 @@ public class RegistroPersona extends JDialog {
 				boolean disponibilidadMudanza=disponibilidadDeMundanza();
 				ZoneId defaultZoneId = ZoneId.systemDefault();
 				Date fecha = Date.from(selectFechaNacimiento.getDate().atStartOfDay(defaultZoneId).toInstant());
-				if (rbUnivesitario.isSelected()&&!(cbxCarrera.getSelectedItem().toString().equalsIgnoreCase(""))) {
+				if (rbUniversitario.isSelected()&&!(cbxCarrera.getSelectedItem().toString().equalsIgnoreCase(""))) {
 					Universitario universitario= new Universitario(ftxtCedula.getText(), txtNombre.getText(), txtApellido.getText(), txtCorreo.getText(), fecha, ftxtTelefono.getText(), cbxProvincia.getSelectedItem().toString(), Float.valueOf(spnSalarioEsperado.getValue().toString()), genero, estadoProfesional, disponibilidadViaje, disponibilidadMudanza, idiomas(), cbxCarrera.getSelectedItem().toString());
 					Administracion.getInstance().insertarPersona(universitario);
 					hecho=true;

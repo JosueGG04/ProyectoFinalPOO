@@ -58,6 +58,17 @@ public class Utilidades {
 		return mascara;
 	}
 	
+	public static MaskFormatter getMascaraRNC() {
+		MaskFormatter mascara = null;
+		try {
+			mascara = new MaskFormatter("###########");
+			mascara.setPlaceholderCharacter('_');
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return mascara;
+	}
+	
 	public static MaskFormatter getMascaraTelefono() {
 		MaskFormatter mascara = null;
 		try {

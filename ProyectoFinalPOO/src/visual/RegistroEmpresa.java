@@ -10,21 +10,22 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.border.TitledBorder;
+
+import logico.Utilidades;
+
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.UIManager;
 import java.awt.Color;
+import javax.swing.JFormattedTextField;
 
 public class RegistroEmpresa extends JDialog {
 
 	private final JPanel contentPanel = new JPanel();
 	private JTextField txtNomDirector;
-	private JTextField txtTelDirector;
 	private JTextField txtCorreoDirector;
-	private JTextField txtRNC;
 	private JTextField txtCorreoEmpresa;
 	private JTextField txtNombre;
-	private JTextField txtTelEmpresa;
 
 	/**
 	 * Launch the application.
@@ -43,7 +44,8 @@ public class RegistroEmpresa extends JDialog {
 	 * Create the dialog.
 	 */
 	public RegistroEmpresa() {
-		setBounds(100, 100, 669, 314);
+		setTitle("Registrar Empresa");
+		setBounds(100, 100, 537, 314);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
@@ -55,12 +57,12 @@ public class RegistroEmpresa extends JDialog {
 			
 			JPanel panel_Empresa = new JPanel();
 			panel_Empresa.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Informaci\u00F3n de la Empresa", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
-			panel_Empresa.setBounds(10, 11, 623, 117);
+			panel_Empresa.setBounds(10, 11, 494, 117);
 			panel.add(panel_Empresa);
 			panel_Empresa.setLayout(null);
 			{
 				JLabel lblRNC = new JLabel("RNC:");
-				lblRNC.setBounds(10, 29, 79, 14);
+				lblRNC.setBounds(10, 30, 35, 14);
 				panel_Empresa.add(lblRNC);
 			}
 			{
@@ -69,38 +71,26 @@ public class RegistroEmpresa extends JDialog {
 				panel_Empresa.add(lblCorreoEmpresa);
 			}
 			{
-				txtRNC = new JTextField();
-				txtRNC.setColumns(10);
-				txtRNC.setBounds(135, 26, 170, 20);
-				panel_Empresa.add(txtRNC);
-			}
-			{
 				txtCorreoEmpresa = new JTextField();
 				txtCorreoEmpresa.setColumns(10);
-				txtCorreoEmpresa.setBounds(135, 87, 476, 20);
+				txtCorreoEmpresa.setBounds(149, 87, 332, 20);
 				panel_Empresa.add(txtCorreoEmpresa);
 			}
 			{
 				JLabel lblNombre = new JLabel("Nombre:");
-				lblNombre.setBounds(315, 29, 79, 14);
+				lblNombre.setBounds(148, 30, 79, 14);
 				panel_Empresa.add(lblNombre);
 			}
 			{
-				JLabel lblTelEmpresa = new JLabel("Tel\u00E9fono de la empresa:");
-				lblTelEmpresa.setBounds(315, 62, 129, 14);
+				JLabel lblTelEmpresa = new JLabel("Tel\u00E9fono:");
+				lblTelEmpresa.setBounds(265, 62, 55, 14);
 				panel_Empresa.add(lblTelEmpresa);
 			}
 			{
 				txtNombre = new JTextField();
 				txtNombre.setColumns(10);
-				txtNombre.setBounds(441, 26, 170, 20);
+				txtNombre.setBounds(222, 27, 259, 20);
 				panel_Empresa.add(txtNombre);
-			}
-			{
-				txtTelEmpresa = new JTextField();
-				txtTelEmpresa.setColumns(10);
-				txtTelEmpresa.setBounds(441, 59, 170, 20);
-				panel_Empresa.add(txtTelEmpresa);
 			}
 			{
 				JLabel lblArea = new JLabel("\u00C1rea:");
@@ -109,43 +99,52 @@ public class RegistroEmpresa extends JDialog {
 			}
 			
 			JComboBox cmbArea = new JComboBox();
-			cmbArea.setModel(new DefaultComboBoxModel(new String[] {"<Seleccione>", "Industrial", "Comercial", "Servicios"}));
+			cmbArea.setModel(new DefaultComboBoxModel(new String[] {"<Seleccione> ", "Industrial", "Comercial", "Servicios"}));
 			cmbArea.setEditable(true);
-			cmbArea.setBounds(135, 57, 170, 20);
+			cmbArea.setBounds(51, 59, 189, 20);
 			panel_Empresa.add(cmbArea);
+			
+			JFormattedTextField ftxtTelefono = new JFormattedTextField(Utilidades.getMascaraTelefono());
+			ftxtTelefono.setBounds(330, 59, 151, 20);
+			panel_Empresa.add(ftxtTelefono);
+			{
+				JFormattedTextField formattedTextField = new JFormattedTextField(Utilidades.getMascaraRNC());
+				formattedTextField.setBounds(51, 27, 88, 20);
+				panel_Empresa.add(formattedTextField);
+			}
 			{
 				JPanel panel_1 = new JPanel();
 				panel_1.setBorder(new TitledBorder(null, "Informaci\u00F3n del Director", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-				panel_1.setBounds(10, 139, 623, 87);
+				panel_1.setBounds(10, 139, 494, 87);
 				panel.add(panel_1);
 				panel_1.setLayout(null);
 				
 				JLabel lbl = new JLabel("Director:");
-				lbl.setBounds(10, 31, 79, 14);
+				lbl.setBounds(10, 19, 56, 14);
 				panel_1.add(lbl);
 				
 				JLabel lblCorreoDelDirector = new JLabel("Correo del Director:");
-				lblCorreoDelDirector.setBounds(10, 59, 115, 14);
+				lblCorreoDelDirector.setBounds(10, 52, 115, 14);
 				panel_1.add(lblCorreoDelDirector);
 				
 				txtNomDirector = new JTextField();
-				txtNomDirector.setBounds(135, 28, 170, 20);
+				txtNomDirector.setBounds(72, 16, 157, 20);
 				panel_1.add(txtNomDirector);
 				txtNomDirector.setColumns(10);
 				
 				txtCorreoDirector = new JTextField();
-				txtCorreoDirector.setBounds(135, 56, 476, 20);
+				txtCorreoDirector.setBounds(132, 49, 347, 20);
 				panel_1.add(txtCorreoDirector);
 				txtCorreoDirector.setColumns(10);
 				
 				JLabel lblTelfonoDelDirector = new JLabel("Tel\u00E9fono del Director:");
-				lblTelfonoDelDirector.setBounds(315, 31, 129, 14);
+				lblTelfonoDelDirector.setBounds(239, 19, 129, 14);
 				panel_1.add(lblTelfonoDelDirector);
-				
-				txtTelDirector = new JTextField();
-				txtTelDirector.setBounds(441, 28, 170, 20);
-				panel_1.add(txtTelDirector);
-				txtTelDirector.setColumns(10);
+				{
+					JFormattedTextField ftxtTelefonoDirector = new JFormattedTextField(Utilidades.getMascaraTelefono());
+					ftxtTelefonoDirector.setBounds(369, 16, 120, 20);
+					panel_1.add(ftxtTelefonoDirector);
+				}
 			}
 		}
 		{
