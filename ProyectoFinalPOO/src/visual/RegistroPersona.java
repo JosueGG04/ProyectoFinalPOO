@@ -8,18 +8,10 @@ import javax.swing.JDialog;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.TitledBorder;
-import javax.swing.JToggleButton;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JFormattedTextField;
 import javax.swing.JSpinner;
-import javax.swing.SpinnerDateModel;
-import java.util.Date;
-import java.util.Calendar;
-import javax.swing.JTree;
-import javax.swing.JTextPane;
-import javax.swing.JEditorPane;
-import javax.swing.JComboBox;
 import com.github.lgooddatepicker.components.DatePicker;
 import javax.swing.JRadioButton;
 import javax.swing.UIManager;
@@ -106,8 +98,10 @@ public class RegistroPersona extends JDialog {
 		DatePicker FechaNacimiento = new DatePicker();
 		FechaNacimiento.getComponentToggleCalendarButton().setSize(26, 20);
 		FechaNacimiento.getComponentDateTextField().setSize(190, 20);
-		FechaNacimiento.setBounds(10, 173, 219, 25);
+		FechaNacimiento.setDateToToday();
+		FechaNacimiento.setBounds(10, 173, 219, 25);//get date ("uuuu-MM-dd")
 		panel_personal.add(FechaNacimiento);
+		
 		
 		JRadioButton rdbtnNewRadioButton = new JRadioButton("Hombre");
 		rdbtnNewRadioButton.setBounds(259, 174, 109, 23);
