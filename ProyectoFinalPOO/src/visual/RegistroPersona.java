@@ -62,7 +62,7 @@ public class RegistroPersona extends JDialog {
 	private JPanel panel_obrero;
 	private JRadioButton rbMujer;
 	private JRadioButton rbHombre;
-	private JComboBox cbxCarrera;
+	private JComboBox<String> cbxCarrera;
 	private JSpinner spnAniosDeExperiencia;
 	private JComboBox cbxAreaTecnica;
 	private DatePicker selectFechaNacimiento;
@@ -275,7 +275,7 @@ public class RegistroPersona extends JDialog {
 		chckbxIngles.setBounds(9, 17, 93, 23);
 		panel_idiomas.add(chckbxIngles);
 		
-		chckbxFrances = new JCheckBox("Franc\u00E9s");
+		chckbxFrances = new JCheckBox("Frances");
 		chckbxFrances.setBounds(111, 17, 93, 23);
 		panel_idiomas.add(chckbxFrances);
 		
@@ -322,7 +322,7 @@ public class RegistroPersona extends JDialog {
 		panel_universitario.add(lblCarreraUniversitaria);
 		
 		cbxCarrera = new JComboBox();
-		cbxCarrera.setModel(new DefaultComboBoxModel(new String[] {"", "Arquitectura", "Comercio Internacional", "Contabilidad", "Derecho", "Educaci\u00F3n F\u00EDsica", "Enfermer\u00EDa", "Filosof\u00EDa y Letras", "Finanzas", "Inform\u00E1tica", "Ingenier\u00EDa en alimentos", "Medicina", "Nutricionista", "Publicidad y Mercadeo"}));
+		cbxCarrera.setModel(new DefaultComboBoxModel<String>(new String[] {"", "Arquitectura", "Comercio Internacional", "Contabilidad", "Derecho", "Educaci\u00F3n F\u00EDsica", "Enfermer\u00EDa", "Filosof\u00EDa y Letras", "Finanzas", "Inform\u00E1tica", "Ingenier\u00EDa en alimentos", "Medicina", "Nutricionista", "Publicidad y Mercadeo"}));
 		cbxCarrera.setBounds(156, 37, 171, 20);
 		panel_universitario.add(cbxCarrera);
 		
