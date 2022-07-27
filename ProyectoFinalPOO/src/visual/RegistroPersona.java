@@ -23,6 +23,7 @@ public class RegistroPersona extends JDialog {
 	private final JPanel contentPanel = new JPanel();
 	private JTextField txtNombre;
 	private JTextField txtCiudad;
+	private JTextField textField;
 
 	/**
 	 * Launch the application.
@@ -41,7 +42,7 @@ public class RegistroPersona extends JDialog {
 	 * Create the dialog.
 	 */
 	public RegistroPersona() {
-		setBounds(100, 100, 550, 650);
+		setBounds(100, 100, 550, 700);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
@@ -49,7 +50,7 @@ public class RegistroPersona extends JDialog {
 		
 		JPanel panel_personal = new JPanel();
 		panel_personal.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Informaci\u00F3n Personal", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
-		panel_personal.setBounds(10, 11, 514, 209);
+		panel_personal.setBounds(10, 11, 514, 263);
 		contentPanel.add(panel_personal);
 		panel_personal.setLayout(null);
 		
@@ -71,7 +72,7 @@ public class RegistroPersona extends JDialog {
 		panel_personal.add(formattedTextField);
 		
 		JLabel lblFechaDeNacimiento = new JLabel("Fecha de nacimiento:");
-		lblFechaDeNacimiento.setBounds(10, 148, 128, 14);
+		lblFechaDeNacimiento.setBounds(10, 198, 128, 14);
 		panel_personal.add(lblFechaDeNacimiento);
 		
 		JLabel lblTelefono = new JLabel("Telefono:");
@@ -92,7 +93,7 @@ public class RegistroPersona extends JDialog {
 		panel_personal.add(txtCiudad);
 		
 		JLabel lblGenero = new JLabel("Genero:");
-		lblGenero.setBounds(259, 148, 46, 14);
+		lblGenero.setBounds(259, 198, 46, 14);
 		panel_personal.add(lblGenero);
 		
 		DatePicker FechaNacimiento = new DatePicker();
@@ -104,23 +105,32 @@ public class RegistroPersona extends JDialog {
 		
 		
 		JRadioButton rdbtnNewRadioButton = new JRadioButton("Hombre");
-		rdbtnNewRadioButton.setBounds(259, 174, 109, 23);
+		rdbtnNewRadioButton.setBounds(259, 224, 109, 23);
 		panel_personal.add(rdbtnNewRadioButton);
 		
 		JRadioButton rdbtnMujer = new JRadioButton("Mujer");
-		rdbtnMujer.setBounds(380, 174, 109, 23);
+		rdbtnMujer.setBounds(380, 224, 109, 23);
 		panel_personal.add(rdbtnMujer);
+		
+		JLabel lblNewLabel = new JLabel("Correo electr\u00F3nico:");
+		lblNewLabel.setBounds(10, 145, 109, 14);
+		panel_personal.add(lblNewLabel);
+		
+		textField = new JTextField();
+		textField.setBounds(10, 170, 468, 20);
+		panel_personal.add(textField);
+		textField.setColumns(10);
 		
 		JPanel panel_info_tipo = new JPanel();
 		panel_info_tipo.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Informacion Especifica", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
-		panel_info_tipo.setBounds(10, 467, 514, 100);
+		panel_info_tipo.setBounds(10, 521, 514, 100);
 		contentPanel.add(panel_info_tipo);
 		panel_info_tipo.setLayout(null);
 		
 		JPanel panel_tipo = new JPanel();
 		panel_tipo.setLayout(null);
 		panel_tipo.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Tipo de personal", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
-		panel_tipo.setBounds(10, 379, 514, 77);
+		panel_tipo.setBounds(10, 433, 514, 77);
 		contentPanel.add(panel_tipo);
 		
 		JRadioButton rdbtnNewRadioButton_1 = new JRadioButton("Univesitario");
@@ -138,7 +148,7 @@ public class RegistroPersona extends JDialog {
 		JPanel panel_empleado = new JPanel();
 		panel_empleado.setLayout(null);
 		panel_empleado.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Informaci\u00F3n Profesional", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
-		panel_empleado.setBounds(10, 231, 514, 137);
+		panel_empleado.setBounds(10, 285, 514, 137);
 		contentPanel.add(panel_empleado);
 		
 		JLabel lblSalarioEsperado = new JLabel("Salario Esperado:");
@@ -179,7 +189,7 @@ public class RegistroPersona extends JDialog {
 		chckbxChino.setBounds(111, 85, 93, 23);
 		panel_idiomas.add(chckbxChino);
 		
-		JCheckBox chckbxNewCheckBox_1 = new JCheckBox("Asalariado");
+		JCheckBox chckbxNewCheckBox_1 = new JCheckBox("Asalariado ");
 		chckbxNewCheckBox_1.setBounds(10, 74, 97, 23);
 		panel_empleado.add(chckbxNewCheckBox_1);
 		
@@ -191,15 +201,15 @@ public class RegistroPersona extends JDialog {
 			buttonPane.setLayout(new FlowLayout(FlowLayout.RIGHT));
 			getContentPane().add(buttonPane, BorderLayout.SOUTH);
 			{
-				JButton okButton = new JButton("OK");
-				okButton.setActionCommand("OK");
-				buttonPane.add(okButton);
-				getRootPane().setDefaultButton(okButton);
+				JButton btnAgregar = new JButton("Agregar");
+				btnAgregar.setActionCommand("OK");
+				buttonPane.add(btnAgregar);
+				getRootPane().setDefaultButton(btnAgregar);
 			}
 			{
-				JButton cancelButton = new JButton("Cancel");
-				cancelButton.setActionCommand("Cancel");
-				buttonPane.add(cancelButton);
+				JButton btnCancelar = new JButton("Cancelar");
+				btnCancelar.setActionCommand("Cancel");
+				buttonPane.add(btnCancelar);
 			}
 		}
 	}
