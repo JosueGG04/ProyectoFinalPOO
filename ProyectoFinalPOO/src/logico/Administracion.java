@@ -51,4 +51,19 @@ public class Administracion {
 	public void setMisSolicitudPersonas(ArrayList<SolicitudPersona> misSolicitudPersonas) {
 		this.misSolicitudPersonas = misSolicitudPersonas;
 	}
+	
+	public void insertarPersona(Persona persona) {
+		misPersonas.add(persona);
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

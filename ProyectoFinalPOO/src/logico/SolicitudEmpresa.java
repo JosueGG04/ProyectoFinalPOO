@@ -23,8 +23,7 @@ public class SolicitudEmpresa implements Serializable{
 	private String areaTecnica;
 	private int anyosProfesion;
 	
-	public SolicitudEmpresa(String idSolicitud, String tipo, int cantEmpleadosSolicitados, int edadMinima
-			, float salarioMaximo, String carrera, String oficio, String areaTecnica,
+	public SolicitudEmpresa(String idSolicitud, String tipo, int cantEmpleadosSolicitados, int edadMinima, float salarioMaximo, String carrera, String oficio, String areaTecnica,
 			int anyosProfesion) {
 		super();
 		this.idSolicitud = idSolicitud;

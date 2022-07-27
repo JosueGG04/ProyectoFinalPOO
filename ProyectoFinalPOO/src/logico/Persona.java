@@ -2,6 +2,7 @@ package logico;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 
 public class Persona implements Serializable{
@@ -118,6 +119,13 @@ public class Persona implements Serializable{
 		return disponibilidadMudanza;
 	}
 	
-	
+	public int edad() {
+		 Calendar naci = Calendar.getInstance();
+		 Calendar actual = Calendar.getInstance();
+		 int edad=0;
+		 naci.setTime(fechaNacimiento);
+		 edad = actual.get(1)-naci.get(1);
+		 return edad;
+	}
 	
 }
