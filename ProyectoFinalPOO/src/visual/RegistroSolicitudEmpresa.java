@@ -166,7 +166,7 @@ public class RegistroSolicitudEmpresa extends JDialog {
 			
 			textField = new JTextField();
 			textField.setColumns(10);
-			textField.setBounds(130, 85, 220, 20);
+			textField.setBounds(130, 85, 271, 20);
 			panel_InfoSolicitud.add(textField);
 			
 			JPanel panel_EspecificSolicitud = new JPanel();
