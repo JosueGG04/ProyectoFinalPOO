@@ -1,10 +1,11 @@
 package logico;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 import com.sun.jndi.url.iiopname.iiopnameURLContextFactory;
 
-public class SolicitudEmpresa {
+public class SolicitudEmpresa implements Serializable{
 	private String idSolicitud;
 	private String tipo;//innecesario
 	private int cantEmpleadosSolicitados;

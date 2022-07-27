@@ -1,9 +1,10 @@
 package logico;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class Persona {
+public class Persona implements Serializable{
 	protected String cedula;
 	protected String nombre;
 	protected String apellido;

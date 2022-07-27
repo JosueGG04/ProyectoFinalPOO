@@ -1,9 +1,10 @@
 package logico;
 
+import java.io.Serializable;
 import java.security.KeyStore.PrivateKeyEntry;
 import java.util.ArrayList;
 
-public class Empresa {
+public class Empresa implements Serializable{
 	private String idEmpresa;
 	private String nombre;
 	private String director; 
