@@ -3,6 +3,10 @@ package logico;
 import java.io.Serializable;
 
 public class SolicitudPersona implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -2348235660897647670L;
 	private String idSolicitud;
 	private String cedula;
 	private String trabajo;

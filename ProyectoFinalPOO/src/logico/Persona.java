@@ -5,30 +5,43 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class Persona implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -6357698275386607916L;
 	protected String cedula;
 	protected String nombre;
 	protected String apellido;
+	protected String correo;
 	protected Date fechaNacimiento;
 	protected String telefono;
 	protected String ciudad;
 	protected float salarioEsperado;
 	protected char genero;
 	protected boolean estadoProfesional;
+	protected boolean disponibilidadViaje;
+	protected boolean disponibilidadMudanza;
 	protected ArrayList<String> idiomas;
 	protected ArrayList<SolicitudPersona> misSolicitudes;
 	
-	public Persona(String cedula, String nombre, String apellido, Date fechaNacimiento, String telefono, String ciudad,
-			float salarioEsperado, char genero, boolean estadoProfesional, ArrayList<String> idiomas){
+
+
+	public Persona(String cedula, String nombre, String apellido, String correo, Date fechaNacimiento, String telefono,
+			String ciudad, float salarioEsperado, char genero, boolean estadoProfesional, boolean disponibilidadViaje,
+			boolean disponibilidadMudanza, ArrayList<String> idiomas) {
 		super();
 		this.cedula = cedula;
 		this.nombre = nombre;
 		this.apellido = apellido;
+		this.correo = correo;
 		this.fechaNacimiento = fechaNacimiento;
 		this.telefono = telefono;
 		this.ciudad = ciudad;
 		this.salarioEsperado = salarioEsperado;
 		this.genero = genero;
 		this.estadoProfesional = estadoProfesional;
+		this.disponibilidadViaje = disponibilidadViaje;
+		this.disponibilidadMudanza = disponibilidadMudanza;
 		this.idiomas = idiomas;
 		this.misSolicitudes = new ArrayList<SolicitudPersona>();
 	}
@@ -92,7 +105,18 @@ public class Persona implements Serializable{
 	public ArrayList<SolicitudPersona> getMisSolicitudes() {
 		return misSolicitudes;
 	}
-	
+
+	public String getCorreo() {
+		return correo;
+	}
+
+	public boolean isDisponibilidadViaje() {
+		return disponibilidadViaje;
+	}
+
+	public boolean isDisponibilidadMudanza() {
+		return disponibilidadMudanza;
+	}
 	
 	
 	

@@ -6,13 +6,16 @@ import java.util.ArrayList;
 import com.sun.jndi.url.iiopname.iiopnameURLContextFactory;
 
 public class SolicitudEmpresa implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 4898251650035678305L;
 	private String idSolicitud;
 	private String tipo;//innecesario
 	private int cantEmpleadosSolicitados;
 	private ArrayList<Persona> personasContratadas;
 	private int edadMinima;
 	private String localizacionSugerida; //¿Necesario?
-	private boolean pedirLocalizacion; //¿Necesario?
 	private float salarioMaximo;
 	private ArrayList<String> idiomas;
 	private String carrera;
@@ -20,15 +23,14 @@ public class SolicitudEmpresa implements Serializable{
 	private String areaTecnica;
 	private int anyosProfesion;
 	
-	public SolicitudEmpresa(String idSolicitud, String tipo, int cantEmpleadosSolicitados, int edadMinima,
-			boolean pedirLocalizacion, float salarioMaximo, String carrera, String oficio, String areaTecnica,
+	public SolicitudEmpresa(String idSolicitud, String tipo, int cantEmpleadosSolicitados, int edadMinima
+			, float salarioMaximo, String carrera, String oficio, String areaTecnica,
 			int anyosProfesion) {
 		super();
 		this.idSolicitud = idSolicitud;
 		this.tipo = tipo;
 		this.cantEmpleadosSolicitados = cantEmpleadosSolicitados;
 		this.edadMinima = edadMinima;
-		this.pedirLocalizacion = pedirLocalizacion;
 		this.salarioMaximo = salarioMaximo;
 		this.carrera = carrera;
 		this.oficio = oficio;
@@ -36,7 +38,6 @@ public class SolicitudEmpresa implements Serializable{
 		this.anyosProfesion = anyosProfesion;
 		this.personasContratadas = new ArrayList<Persona>();
 		this.idiomas =  new ArrayList<String>();
-		this.pedirLocalizacion = false;
 	}
 
 	public String getTipo() { 
@@ -77,14 +78,6 @@ public class SolicitudEmpresa implements Serializable{
 
 	public void setLocalizacionSugerida(String localizacionSugerida) {
 		this.localizacionSugerida = localizacionSugerida;
-	}
-
-	public boolean isPedirLocalizacion() {
-		return pedirLocalizacion;
-	}
-
-	public void setPedirLocalizacion(boolean pedirLocalizacion) {
-		this.pedirLocalizacion = pedirLocalizacion;
 	}
 
 	public float getSalarioMaximo() {

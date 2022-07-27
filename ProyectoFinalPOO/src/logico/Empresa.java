@@ -1,10 +1,13 @@
 package logico;
 
 import java.io.Serializable;
-import java.security.KeyStore.PrivateKeyEntry;
 import java.util.ArrayList;
 
 public class Empresa implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 7025053391394293331L;
 	private String idEmpresa;
 	private String nombre;
 	private String director; 
