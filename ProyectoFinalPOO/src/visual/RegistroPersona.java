@@ -275,7 +275,7 @@ public class RegistroPersona extends JDialog {
 		chckbxIngles.setBounds(9, 17, 93, 23);
 		panel_idiomas.add(chckbxIngles);
 		
-		chckbxFrances = new JCheckBox("Frances");
+		chckbxFrances = new JCheckBox("Franc\u00E9s");
 		chckbxFrances.setBounds(111, 17, 93, 23);
 		panel_idiomas.add(chckbxFrances);
 		
