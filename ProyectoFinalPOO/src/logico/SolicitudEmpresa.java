@@ -24,12 +24,12 @@ public class SolicitudEmpresa implements Serializable{
 	private boolean DisponibilidadViajar;//5
 	private boolean DisponibilidadMudanza;//6
 	
-	private String carrera;//7
+	private String carrera;//requisito
 	
-	private String oficio;//8
+	private String oficio;//requisito
 	
-	private String areaTecnica;//9
-	private int anyosProfesion;//10
+	private String areaTecnica;//requisito
+	private int anyosProfesion;//7
 	
 
 
@@ -152,7 +152,7 @@ public class SolicitudEmpresa implements Serializable{
 	}
 	
 	public boolean[] requisitosDeLaSolicitud() {
-		boolean requisitos[]  = new boolean[10];
+		boolean requisitos[]  = new boolean[7];
 		if (edadMinima!=0) {
 			requisitos[0]=true;
 		}
@@ -173,7 +173,7 @@ public class SolicitudEmpresa implements Serializable{
 		}
 		
 		if (anyosProfesion!=0) {
-			requisitos[8]=true;
+			requisitos[6]=true;
 		}
 
 		return requisitos;
