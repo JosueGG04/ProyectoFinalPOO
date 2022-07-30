@@ -8,15 +8,15 @@ public class Empresa implements Serializable{
 	 * 
 	 */
 	private static final long serialVersionUID = 7025053391394293331L;
-	private String idEmpresa;
+	private String RNC;
 	private String nombre;
 	private String director; 
 	private String telefono;
 	private ArrayList<SolicitudEmpresa> misSolicitudes;
 	
-	public Empresa(String idEmpresa, String nombre, String director, String telefono) {
+	public Empresa(String RNC, String nombre, String director, String telefono) {
 		super();
-		this.idEmpresa = idEmpresa;
+		this.RNC = RNC;
 		this.nombre = nombre;
 		this.director = director;
 		this.telefono = telefono;
@@ -55,8 +55,8 @@ public class Empresa implements Serializable{
 		this.misSolicitudes = misSolicitudes;
 	}
 
-	public String getIdEmpresa() {
-		return idEmpresa;
+	public String getRNC() {
+		return RNC;
 	}
 	
 	

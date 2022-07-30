@@ -16,7 +16,7 @@ public class Persona implements Serializable{
 	protected String correo;
 	protected Date fechaNacimiento;
 	protected String telefono;
-	protected String ciudad;
+	protected String provincia;
 	protected float salarioEsperado;
 	protected char genero;
 	protected boolean estadoProfesional;
@@ -28,7 +28,7 @@ public class Persona implements Serializable{
 
 
 	public Persona(String cedula, String nombre, String apellido, String correo, Date fechaNacimiento, String telefono,
-			String ciudad, float salarioEsperado, char genero, boolean estadoProfesional, boolean disponibilidadViaje,
+			String provincia, float salarioEsperado, char genero, boolean estadoProfesional, boolean disponibilidadViaje,
 			boolean disponibilidadMudanza, ArrayList<String> idiomas) {
 		super();
 		this.cedula = cedula;
@@ -37,7 +37,7 @@ public class Persona implements Serializable{
 		this.correo = correo;
 		this.fechaNacimiento = fechaNacimiento;
 		this.telefono = telefono;
-		this.ciudad = ciudad;
+		this.provincia = provincia;
 		this.salarioEsperado = salarioEsperado;
 		this.genero = genero;
 		this.estadoProfesional = estadoProfesional;
@@ -55,12 +55,12 @@ public class Persona implements Serializable{
 		this.telefono = telefono;
 	}
 
-	public String getCiudad() {
-		return ciudad;
+	public String getProvincia() {
+		return provincia;
 	}
 
-	public void setCiudad(String ciudad) {
-		this.ciudad = ciudad;
+	public void setProvincia(String provincia) {
+		this.provincia = provincia;
 	}
 
 	public float getSalarioEsperado() {

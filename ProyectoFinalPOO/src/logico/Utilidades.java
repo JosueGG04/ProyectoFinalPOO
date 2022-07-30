@@ -61,7 +61,7 @@ public class Utilidades {
 	public static MaskFormatter getMascaraRNC() {
 		MaskFormatter mascara = null;
 		try {
-			mascara = new MaskFormatter("###########");
+			mascara = new MaskFormatter("#########");
 			mascara.setPlaceholderCharacter('_');
 		} catch (Exception e) {
 			e.printStackTrace();
